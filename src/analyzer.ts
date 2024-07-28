@@ -2,12 +2,14 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as os from 'os';
 
-const logFilePath = path.join(__dirname, '..', 'out', 'logs', 'analysis.log');
+const documentsPath = path.join(os.homedir(), 'Documents', 'Securiter');
+const logFilePath = path.join(documentsPath, 'analysis.log');
 
 export async function initializeLogFile() {
-    if (!fs.existsSync(path.dirname(logFilePath))) {
-        fs.mkdirSync(path.dirname(logFilePath), { recursive: true });
+    if (!fs.existsSync(documentsPath)) {
+        fs.mkdirSync(documentsPath, { recursive: true });
     }
     fs.writeFileSync(logFilePath, `Extension Analysis Log\n=======================\n\n`, 'utf-8');
 }
@@ -59,7 +61,7 @@ interface AnalysisResults {
 export async function analyzeExtension(extension: vscode.Extension<any>): Promise<AnalysisResults> {
     const extensionPath = extension.extensionPath;
     vscode.window.showInformationMessage(`Analyzing extension: ${extension.packageJSON.name}`);
-    
+
     const files = await getFiles(extensionPath);
     const maliciousResults: AnalysisResult[] = [];
     const urls: string[] = [];
@@ -110,7 +112,7 @@ function getFiles(dir: string): Promise<string[]> {
 function detectMaliciousCode(content: string): AnalysisResult[] {
     const execPattern = /exec\((.*?)\)/;
     const potentiallyDangerousCommands = [
-        'cmd', 'powershell', 'bash', 'sh', 'curl', 'wget', 'rm', 'del', 'mv', 'scp', 'ftp', 'tftp', 'ssh', 'netcat', 'nc'
+        'cmd', 'powershell', 'bash', 'sh', 'curl', 'wget', 'rm', 'del', 'mv', 'scp', 'ftp', 'tftp', 'ssh', 'netcat', 'nc', 'telnet', 'ping', 'kill', 'pkill', 'killall', 'reboot', 'shutdown', 'halt', 'init', 'systemctl', 'service', 'chown', 'chmod', 'chgrp', 'useradd', 'usermod', 'userdel', 'groupadd', 'groupmod', 'groupdel', 'passwd', 'su', 'sudo', 'visudo', 'adduser', 'userdel', 'usermod', 'groupadd', 'groupdel', 'groupmod', 'passwd', 'chown', 'chmod', 'chgrp', 'useradd', 'usermod', 'userdel', 'groupadd', 'groupmod', 'groupdel', 'passwd', 'su', 'sudo', 'visudo', 'adduser', 'userdel', 'usermod', 'groupadd', 'groupdel', 'groupmod', 'passwd', 'chown', 'chmod', 'chgrp', 'useradd', 'usermod', 'userdel', 'groupadd', 'groupmod', 'groupdel', 'passwd', 'su', 'sudo', 'visudo', 'adduser', 'userdel', 'usermod', 'groupadd', 'groupdel', 'groupmod', 'passwd', 'chown', 'chmod', 'chgrp', 'useradd', 'usermod', 'userdel', 'groupadd', 'groupmod', 'groupdel', 'passwd', 'su', 'sudo', 'visudo', 'adduser', 'userdel', 'usermod', 'groupadd', 'groupdel', 'groupmod', 'passwd', 'chown', 'chmod', 'chgrp', 'useradd', 'usermod', 'userdel', 'groupadd', 'groupmod', 'groupdel', 'passwd', 'su', 'sudo', 'visudo', 'adduser', 'userdel', 'usermod', 'groupadd', 'groupdel', 'groupmod', 'passwd', 'chown', 'chmod', 'chgrp', 'useradd', 'usermod', 'userdel', 'groupadd', 'groupmod', 'groupdel', 'passwd', 'su', 'sudo', 'visudo', 'adduser', 'userdel', 'usermod', 'groupadd', 'groupdel', 'groupmod', 'passwd', 'chown', 'chmod', 'chgrp'
     ];
 
     const detected: AnalysisResult[] = [];

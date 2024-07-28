@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 
             const analysisResults = await analyzeExtension(ext);
             await logExtensionAnalysis(ext, analysisResults);
-            
+
             if (analysisResults) {
                 vscode.window.showWarningMessage(`Possible malicious code found in extension: ${ext.packageJSON.name}`);
             }

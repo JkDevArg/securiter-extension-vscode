@@ -10,7 +10,9 @@ Securiter es una extensión para Visual Studio Code que analiza otras extensione
 
 ![Analyzing Extensions](images/icon.png)
 
-> Tip: Utiliza animaciones para mostrar las características de tu extensión de manera efectiva.
+## Uso
+
+Para usar la herramienta simplemente use: ```ctrl+shift+p``` y seleccionar * Analyze Extensions.
 
 ## Requisitos
 
@@ -30,15 +32,15 @@ No se han reportado problemas conocidos hasta el momento.
 
 Lanzamiento inicial de Securiter.
 
+- Detección de URLs.
+- Mejora en la detección de comandos peligrosos.
+
 ### 1.0.1
 
 Corrección de errores menores.
 
-### 1.1.0
-
-Añadidas las siguientes características:
-- Detección de URLs.
-- Mejora en la detección de comandos peligrosos.
+- Archivo guardado en documentos.
+- Mas comandos que se pueden detectar como maliciosos.
 
 ---
 
