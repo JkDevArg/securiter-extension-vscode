@@ -1,8 +1,9 @@
 {
   "name": "securiter",
-  "displayName": "securiter",
-  "description": "",
+  "displayName": "Securiter",
+  "description": "extensión basica para analizar otras extensiones en búsqueda de código malicioso.",
   "version": "0.0.1",
+  "publisher": "Joaquin Centurion",
   "engines": {
     "vscode": "^1.91.0"
   },
@@ -13,8 +14,8 @@
   "main": "./out/extension.js",
   "icon": "images/icon.png",
   "author": {
-    "name": "Tu Nombre",
-    "email": "tu-email@example.com"
+    "name": "Joaquin Centurion",
+    "email": "jcenturion@focusit.pe"
   },
   "contributes": {
     "commands": [
