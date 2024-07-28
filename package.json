@@ -2,7 +2,7 @@
   "name": "securiter",
   "displayName": "Securiter",
   "description": "extensión basica para analizar otras extensiones en búsqueda de código malicioso.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "jkdevarg",
   "engines": {
     "vscode": "^1.91.0"
