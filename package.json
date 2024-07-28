@@ -17,6 +17,10 @@
     "name": "Joaquin Centurion",
     "email": "jcenturion@focusit.pe"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JkDevArg/securiter-extension-vscode"
+  },
   "contributes": {
     "commands": [
       {
