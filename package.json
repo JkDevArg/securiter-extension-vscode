@@ -3,7 +3,7 @@
   "displayName": "Securiter",
   "description": "extensión basica para analizar otras extensiones en búsqueda de código malicioso.",
   "version": "0.0.1",
-  "publisher": "Joaquin Centurion",
+  "publisher": "jkdevarg",
   "engines": {
     "vscode": "^1.91.0"
   },
