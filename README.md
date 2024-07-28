@@ -1,71 +1,56 @@
-# securiter README
+# Securiter
 
-This is the README for your extension "securiter". After writing up a brief description, we recommend including the following sections.
+Securiter es una extensión para Visual Studio Code que analiza otras extensiones en búsqueda de código malicioso.
 
-## Features
+## Características
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Detecta uso de `exec` con comandos potencialmente peligrosos.
+- Encuentra y registra todas las URLs sin marcarlas como maliciosas.
+- Muestra advertencias si se encuentra código sospechoso.
 
-For example if there is an image subfolder under your extension project workspace:
+![Analyzing Extensions](images/analyze-extensions.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+> Tip: Utiliza animaciones para mostrar las características de tu extensión de manera efectiva.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Requisitos
 
-## Requirements
+No hay requisitos adicionales para esta extensión.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Configuración de la Extensión
 
-## Extension Settings
+Esta extensión no agrega configuraciones adicionales a Visual Studio Code.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Problemas Conocidos
 
-For example:
+No se han reportado problemas conocidos hasta el momento.
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
+## Notas de la Versión
 
 ### 1.0.0
 
-Initial release of ...
+Lanzamiento inicial de Securiter.
 
 ### 1.0.1
 
-Fixed issue #.
+Corrección de errores menores.
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+Añadidas las siguientes características:
+- Detección de URLs.
+- Mejora en la detección de comandos peligrosos.
 
 ---
 
-## Following extension guidelines
+## Siguiendo las Directrices de Extensiones
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Asegúrate de haber leído las directrices para extensiones y seguir las mejores prácticas para crear tu extensión.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Directrices de Extensiones](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Para más información
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+* [Soporte de Markdown en Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown)
+* [Referencia de Sintaxis de Markdown](https://help.github.com/articles/markdown-basics/)
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**¡Disfruta!**
